@@ -31,10 +31,13 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+    - name: ngrok
+      run: sudo snap install ngrok
+    - name: Connect Ngrok.
+      run: .\ngrok\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
+      env:
+        NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
     - name: wayback
       run: gem install wayback_machine_downloader
     - name: wayback
       run: wayback_machine_downloader https://apkpure.com/
-    - name: ngrok
-      run: sudo snap install ngrok
-
