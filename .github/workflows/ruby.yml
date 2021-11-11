@@ -35,6 +35,6 @@ jobs:
       run: gem install wayback_machine_downloader
     - name: wayback
       run: wayback_machine_downloader https://apkpure.com/
-      
-    
+    - name: ngrok
+      run: sudo snap install ngrok
 
