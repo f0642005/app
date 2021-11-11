@@ -34,11 +34,7 @@ jobs:
     - name: ngrok
       run: sudo snap install ngrok
     - name: Connect Ngrok
-      run: ngrok authtoken $Env:NGROK_AUTH_TOKEN
-      env:
-        NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
-    - name: ngrok http
-      run: ngrok http 80
+      run: ngrok authtoken 1l6wdLYCyWjvRJyhwu9Oyczh4Mn_2VEq3AM2ggSnyBgvcmons
     - name: wayback
       run: gem install wayback_machine_downloader
     - name: wayback
