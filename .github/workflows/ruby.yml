@@ -33,11 +33,11 @@ jobs:
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: ngrok
       run: sudo snap install ngrok
-    - name: Connect Ngrok.
+    - name: Connect Ngrok
       run: ngrok authtoken $Env:NGROK_AUTH_TOKEN
       env:
         NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN }}
-    - name: ngrok
+    - name: ngrok http
       run: ngrok http 80
     - name: wayback
       run: gem install wayback_machine_downloader
